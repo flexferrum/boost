@@ -24,4 +24,6 @@ target_link_libraries(boost_polygon INTERFACE boost::config)
 
 bcm_deploy(TARGETS boost_polygon INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

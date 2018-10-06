@@ -18,4 +18,6 @@ set_property(TARGET boost_mp11 PROPERTY EXPORT_NAME mp11)
 
 bcm_deploy(TARGETS boost_mp11 INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

@@ -56,4 +56,6 @@ target_link_libraries(boost_multi_index INTERFACE boost::utility)
 
 bcm_deploy(TARGETS boost_multi_index INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

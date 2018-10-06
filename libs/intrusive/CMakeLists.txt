@@ -30,4 +30,6 @@ target_link_libraries(boost_intrusive INTERFACE boost::config)
 
 bcm_deploy(TARGETS boost_intrusive INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

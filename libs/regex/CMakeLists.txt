@@ -62,4 +62,6 @@ target_include_directories(boost_regex PRIVATE include)
 
 bcm_deploy(TARGETS boost_regex INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

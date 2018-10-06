@@ -100,4 +100,6 @@ target_include_directories(boost_serialization PRIVATE include)
 
 bcm_deploy(TARGETS boost_serialization INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

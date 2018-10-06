@@ -18,4 +18,6 @@ set_property(TARGET boost_preprocessor PROPERTY EXPORT_NAME preprocessor)
 
 bcm_deploy(TARGETS boost_preprocessor INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

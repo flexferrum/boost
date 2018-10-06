@@ -52,4 +52,6 @@ target_link_libraries(boost_signals2 INTERFACE boost::smart_ptr)
 
 bcm_deploy(TARGETS boost_signals2 INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

@@ -18,4 +18,6 @@ set_property(TARGET boost_poly_collection PROPERTY EXPORT_NAME poly_collection)
 
 bcm_deploy(TARGETS boost_poly_collection INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

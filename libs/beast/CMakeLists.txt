@@ -18,4 +18,6 @@ set_property(TARGET boost_beast PROPERTY EXPORT_NAME beast)
 
 bcm_deploy(TARGETS boost_beast INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

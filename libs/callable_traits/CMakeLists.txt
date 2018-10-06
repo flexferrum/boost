@@ -18,4 +18,6 @@ set_property(TARGET boost_callable_traits PROPERTY EXPORT_NAME callable_traits)
 
 bcm_deploy(TARGETS boost_callable_traits INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

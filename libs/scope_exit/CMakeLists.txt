@@ -32,4 +32,6 @@ target_link_libraries(boost_scope_exit INTERFACE boost::preprocessor)
 
 bcm_deploy(TARGETS boost_scope_exit INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

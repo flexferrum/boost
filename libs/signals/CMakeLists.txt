@@ -44,4 +44,6 @@ target_include_directories(boost_signals PRIVATE include)
 
 bcm_deploy(TARGETS boost_signals INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

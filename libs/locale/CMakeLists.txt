@@ -111,4 +111,6 @@ target_link_libraries(boost_locale PUBLIC boost::unordered)
 
 bcm_deploy(TARGETS boost_locale INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

@@ -18,4 +18,6 @@ set_property(TARGET boost_compatibility PROPERTY EXPORT_NAME compatibility)
 
 bcm_deploy(TARGETS boost_compatibility INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()

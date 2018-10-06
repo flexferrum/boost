@@ -28,4 +28,6 @@ target_link_libraries(boost_qvm INTERFACE boost::throw_exception)
 
 bcm_deploy(TARGETS boost_qvm INCLUDE include NAMESPACE boost::)
 
-add_subdirectory(test)
+if(BOOST_CMAKE_BUILD_TESTS)
+    add_subdirectory(test)
+endif()
